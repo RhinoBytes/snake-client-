@@ -10,12 +10,12 @@ const connect = function () {
 
   conn.on("connect", () => {
     conn.write("Name: DCR");
-    setInterval(() => {
+    /* setInterval(() => {
       conn.write("Move: up");
      }, 50);
      setTimeout(() => {
       conn.write("Move: up");
-     }, 100);
+     }, 100); */
   });
 
   conn.on("data", (data) => {
