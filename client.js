@@ -4,7 +4,13 @@ const connect = function () {
     host: "192.168.2.84",
     port: 50541, 
   });
+  conn.on("connect", () => {
+    console.log("Successfully connected to game server.");
+  });
 
+  conn.on("connect", () => {
+    conn.write("Name: DCR");
+  });
 
   conn.on("data", (data) => {
     console.log("Server says:", data);
