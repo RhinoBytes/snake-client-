@@ -10,6 +10,12 @@ const connect = function () {
 
   conn.on("connect", () => {
     conn.write("Name: DCR");
+    setInterval(() => {
+      conn.write("Move: up");
+     }, 50);
+     setTimeout(() => {
+      conn.write("Move: up");
+     }, 100);
   });
 
   conn.on("data", (data) => {
@@ -19,6 +25,6 @@ const connect = function () {
   conn.setEncoding("utf8");
 
   return conn;
-};
+  };
 
 module.exports = connect; 
