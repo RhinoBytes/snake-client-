@@ -3,7 +3,7 @@ const { setupInput } = require("./input");
 
 console.log("Connecting ....");
 
-connect();
-setupInput();
+let connectObj = connect();
+setupInput(connectObj);
 
 // setip interface to handle user input from stdin
