@@ -1,9 +1,10 @@
 const { IP, PORT } = require("./constants");
 const net = require("net");
-const connect = function () {
+// handles connection to snek server
+const connect = function() {
   const conn = net.createConnection({
     host: IP,
-    port: PORT, 
+    port: PORT,
   });
   conn.on("connect", () => {
     console.log("Successfully connected to game server.");
@@ -20,6 +21,6 @@ const connect = function () {
   conn.setEncoding("utf8");
 
   return conn;
-  };
+};
 
 module.exports = { connect }; 

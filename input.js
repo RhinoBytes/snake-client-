@@ -1,12 +1,12 @@
 // stores the active tcp connection object
 let connection;
-
-const handleUserInput = function (conn) {
+// handles user input
+const handleUserInput = function(conn) {
   if (conn === '\u0003') {
     process.exit();
   }
   if (conn === 'w') {
-    connection.write("Move: up"); 
+    connection.write("Move: up");
   }
   if (conn === 'a') {
     connection.write("Move: left");
@@ -26,8 +26,9 @@ const handleUserInput = function (conn) {
   if (conn === 'b') {
     connection.write("Say: Later");
   }
-}
-const setupInput = function (conn) {
+};
+// allows for standard input
+const setupInput = function(conn) {
   connection = conn;
   const stdin = process.stdin;
   stdin.setRawMode(true);
@@ -35,6 +36,6 @@ const setupInput = function (conn) {
   stdin.resume();
   stdin.on("data", handleUserInput);
   return stdin;
-}
+};
 
 module.exports = { setupInput };

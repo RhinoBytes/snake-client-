@@ -6,4 +6,3 @@ console.log("Connecting ....");
 let connectObj = connect();
 setupInput(connectObj);
 
-// setip interface to handle user input from stdin
